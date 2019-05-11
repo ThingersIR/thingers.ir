@@ -1,21 +1,29 @@
 import React from "react"
-import { Link } from "gatsby"
-
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import logo from "../images/thingersLogo.png"
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      height: "100%",
+      width: "100%",
+      position: "absolute",
+      flexFlow: "column",
+    }}
+  >
+    <img width={300} src={logo} alt="Thingers.ir" />
+    <h1
+      style={{
+        fontFamily: "fantasy",
+        color: "rgba(23, 49, 62, 0.9)",
+        textShadow: "0px 6px 5px rgba(0, 0, 0, 0.21)",
+      }}
+    >
+      Thingers IOT community is coming soon...
+    </h1>
+  </div>
 )
 
 export default IndexPage
