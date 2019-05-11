@@ -1,5 +1,5 @@
 import React from "react"
-import logo from "../images/thingersLogo.png"
+import logo from "./../images/thingersLogo.png"
 
 const IndexPage = () => (
   <div
