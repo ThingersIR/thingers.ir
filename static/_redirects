@@ -1,4 +1,2 @@
-# These rules will change if you change your site’s custom domains or HTTPS settings
-
-# Redirect default Netlify subdomain to primary domain
+https://nextthingers.netlify.com/* https://next.thingers.ir/:splat 301!
 https://thingers.netlify.com/* https://thingers.ir/:splat 301!
