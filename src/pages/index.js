@@ -21,7 +21,7 @@ const IndexPage = () => (
         textShadow: "0px 6px 5px rgba(0, 0, 0, 0.21)",
       }}
     >
-      Thingers IOT community is coming soon...
+      Thingers IOT NEXT...
     </h1>
   </div>
 )
