@@ -2,8 +2,9 @@ require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
-    title: `Thingers.ir اینترنت چیزها`,
+    title: `Thingers.ir`,
     description: `معرفی استارتاپ‌های فعال ایران در حوزه اینترنت اشیا(چیزها)`,
+    siteUrl: 'https://thingers.ir',
     author: `@truemoein`,
   },
   plugins: [
