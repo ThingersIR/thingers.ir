@@ -8,6 +8,7 @@ module.exports = {
     author: `@truemoein`,
   },
   plugins: [
+    `@contentful/gatsby-transformer-contentful-richtext`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
@@ -29,14 +30,13 @@ module.exports = {
         background_color: `#EFAB48`,
         theme_color: `#4DD0E2`,
         display: `standalone`,
-        icon: `src/images/ThingersLogo.png`, // This path is relative to the root of the site.
+        icon: `src/images/ThingersLogo.png`,
       },
     },
     {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: `55xbco9h9xme`,
-        // Learn about environment variables: https://gatsby.dev/env-vars
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },

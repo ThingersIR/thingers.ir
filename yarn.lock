@@ -710,7 +710,7 @@
     "@babel/plugin-transform-react-jsx-self" "^7.0.0"
     "@babel/plugin-transform-react-jsx-source" "^7.0.0"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.4.2":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.2.0", "@babel/runtime@^7.4.2":
   version "7.4.4"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.4.4.tgz#dc2e34982eb236803aa27a07fea6857af1b9171d"
   integrity sha512-w0+uT71b6Yi7i5SE0co4NioIpSYS6lLiXvCzWzGSKvpK5vdQtCbICHMj+gbAKAOtxiV6HsVh/MBdaF9EQ6faSg==
@@ -758,6 +758,16 @@
     follow-redirects "^1.2.5"
     is-buffer "^1.1.5"
 
+"@contentful/gatsby-transformer-contentful-richtext@^13.1.0":
+  version "13.1.0"
+  resolved "https://registry.yarnpkg.com/@contentful/gatsby-transformer-contentful-richtext/-/gatsby-transformer-contentful-richtext-13.1.0.tgz#fd0e106e9cf17da1db6202b656d27ebfb6bfd756"
+  integrity sha512-rH79hgQf17o+TrV7SNtcg+XNlmacxdDbND0ZhmHRkwL2F8YAjFBJdgyc6aBavrHQhs+MzUewJlqLqQW+HhEjNQ==
+  dependencies:
+    "@babel/runtime" "^7.2.0"
+    "@contentful/rich-text-html-renderer" "^13.1.0"
+    "@contentful/rich-text-plain-text-renderer" "^13.1.0"
+    lodash.words "^4.2.0"
+
 "@contentful/rich-text-html-renderer@^13.1.0":
   version "13.1.0"
   resolved "https://registry.yarnpkg.com/@contentful/rich-text-html-renderer/-/rich-text-html-renderer-13.1.0.tgz#dddc38df0d34bea3ef5f7821d6118b099120d8f8"
@@ -765,6 +775,13 @@
   dependencies:
     "@contentful/rich-text-types" "^13.1.0"
     escape-html "^1.0.3"
+
+"@contentful/rich-text-plain-text-renderer@^13.1.0":
+  version "13.1.0"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-plain-text-renderer/-/rich-text-plain-text-renderer-13.1.0.tgz#13673c6252921683cccdcb1d8e02688cd5b7e04a"
+  integrity sha512-tz+cn57XCLsGt4vjcf5LhVbM1qrxR0myfdnzWqcunKOdGyReY2c0YxHGlwhrtS/J03rXY4XcgTV6YlMkw+6eeA==
+  dependencies:
+    "@contentful/rich-text-types" "^13.1.0"
 
 "@contentful/rich-text-types@^13.1.0":
   version "13.1.0"
@@ -6951,6 +6968,11 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
+
+lodash.words@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/lodash.words/-/lodash.words-4.2.0.tgz#5ecfeaf8ecf8acaa8e0c8386295f1993c9cf4036"
+  integrity sha1-Xs/q+Oz4rKqODIOGKV8Zk8nPQDY=
 
 lodash@^4.0.0, lodash@^4.11.1, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0, lodash@~4.17.10:
   version "4.17.11"
