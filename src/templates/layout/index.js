@@ -5,7 +5,9 @@ import Footer from "./footer"
 export default ({ children }) => (
   <Fragment>
     <Header />
-    {children}
+    <main>
+      {children}
+    </main>
     <Footer />
   </Fragment>
 )

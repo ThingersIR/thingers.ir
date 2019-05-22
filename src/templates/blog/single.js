@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import SEO from "../../components/seo"
+import Layout from '../layout'
 
 export const query = graphql`
   query($slug: String!) {
@@ -47,7 +48,7 @@ export default function SinglePost(props) {
   console.log(props)
 
   return (
-    <div>
+    <Layout>
       <SEO title={contentfulPost.title} description={contentfulPost.metaDescription} />
       <h1>{contentfulPost.title}</h1>
       <div
@@ -57,6 +58,6 @@ export default function SinglePost(props) {
             .childContentfulRichText.html,
         }}
       />
-    </div>
+    </Layout>
   )
 }

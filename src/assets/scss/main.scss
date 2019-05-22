@@ -1,3 +1,15 @@
+@import "font";
+@import "rules";
+@import "blog";
+
 body {
-  margin: 0;
+  font-family: Sahel, sans-serif;
+  direction: rtl;
+}
+
+nav {
+  a {
+    text-decoration: none;
+    padding: 0 10px;
+  }
 }
