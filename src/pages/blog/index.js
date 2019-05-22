@@ -2,7 +2,6 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import SEO from "../../components/seo"
 import Layout from "../../templates/layout"
-import BlogSidebar from "../../templates/blog/sidebar"
 
 export const query = graphql`
   query {
@@ -21,6 +20,13 @@ export const query = graphql`
           author {
             name
             id
+            slug
+            avatar {
+              id
+              file {
+                url
+              }
+            }
           }
           category {
             id
@@ -44,24 +50,27 @@ export default function Blog({ data }) {
     <Layout>
       <SEO
         title="وبلاگ"
-        description="مقالات و آموزش های مرتبط با اینترنت چیزها (اشیاء) به زبان فارسی | معرفی ابزار و نرم‌افزار"
+        description="مقالات و آموزش‌های مرتبط با اینترنت چیزها (اشیاء) به زبان فارسی | معرفی ابزار و نرم‌افزار"
       />
       <div className="container">
-        <div className="row">
-          <BlogSidebar />
-          <article className="blog-post-list col-md-9 col-xs-12">
-            {edges.map(post => (
-              <div key={post.node.slug} className="row">
-                <Link to={`/blog/${post.node.slug}`} className="post-list-thumbnail col-xs-5" style={{background: `url(${post.node.image.file.url})`}}>
-                  se
-                </Link>
-                <div className="col-xs-7">
-                  <h4>tst</h4>
-                  <p>sdfjsodfj lsjd flsldjf lsdjf lksajfdlk jflkj sdlfjlsdf jlfsdj lksdjflkj</p>
-                </div>
-              </div>
-            ))}
-          </article>
+        <div className="row blog-post-list">
+          {edges.map(post => (
+            <article key={post.node.slug} className="col-xs-6">
+              <Link
+                to={`/blog/${post.node.slug}`}
+                className="post-thumbnail"
+                style={{ backgroundImage: `url(${post.node.image.file.url})` }}
+              />
+              <Link
+                className="post-author-image"
+                to={`/author/${post.node.author.slug}`}
+                style={{
+                  backgroundImage: `url(${post.node.author.avatar.file.url})`,
+                }}
+              />
+              <div className="post-author">نویسنده: <Link to={`/author/${post.node.author.slug}`}>{post.node.author.name}</Link></div>
+            </article>
+          ))}
         </div>
       </div>
     </Layout>

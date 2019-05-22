@@ -43,11 +43,44 @@
 }
 
 .blog-post-list {
-  background: grey;
-
-  .post-list-thumbnail {
+  .post-thumbnail {
     height: 200px;
+    display: block;
     background-size: cover;
-    background-position: center center;
+    background-position: center;
+  }
+  .post-author-image {
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+    background-size: cover;
+    background-position: center;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    margin: -30px 20px 0 0;
+    border: solid 3px #dedede;
+    transition: .2s;
+    &:hover {
+      border: solid 3px #6bbdf9;
+    }
+  }
+  .post-author {
+    display: inline-block;
+    position: relative;
+    top: -22px;
+    right: 12px;
+    font-size: 11px;
+    color: gray;
+
+    a {
+      text-decoration: none;
+      color: #288fda;
+      font-size: 14px;
+      transition: .2s;
+      &:hover {
+        color: #1f6ada;
+      }
+    }
   }
 }
