@@ -45,7 +45,6 @@ module.exports = {
         spaceId: `55xbco9h9xme`,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
-    },
-    `gatsby-plugin-offline`,
+    }
   ],
 }

@@ -1,6 +1,5 @@
 import React from "react"
-import Disqus from "gatsby-plugin-disqus"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Seo from "../../components/Seo"
 import Layout from "../layout"
 
@@ -21,9 +20,8 @@ export const query = graphql`
       }
       metaDescription
       author {
-        id
         name
-        site
+        slug
         avatar {
           id
           file {
@@ -35,6 +33,10 @@ export const query = graphql`
         bio {
           bio
         }
+      }
+      tags {
+        name
+        slug
       }
       childContentfulPostContentRichTextNode {
         childContentfulRichText {
@@ -52,15 +54,42 @@ export default function SinglePost(props) {
     <Layout>
       <Seo title={post.title} description={post.metaDescription} />
       <article className="single-post container">
-        <div className="single-post-top-image">
-          <img
-            src={post.image.file.url}
-            alt={post.image.description}
-            title={post.image.title}
+        <div
+          className="single-post-top-image col-xs-12"
+          style={{
+            backgroundImage: `linear-gradient(to bottom, rgba(36, 59, 85, 0.2), rgba(20, 30, 48, 0.90)), url(${
+              post.image.file.url
+            })`,
+          }}
+        >
+          <Link
+            className="single-post-author-image"
+            to={`/author/${post.author.slug}`}
+            style={{
+              backgroundImage: `url(${post.author.avatar.file.url})`,
+            }}
+            title={`نویسنده: ${post.author.name}`}
           />
+          <h1>{post.title}</h1>
+          <div className="single-post-tags">
+            <ul>
+              {post.tags.map(tag => (
+                <li key={tag.slug}>
+                  <Link to={`/blog/tags/${tag.slug}`}> {tag.name} </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div className="single-post-detail">
+          <ul>
+            <li><Link to="/">صفحه اصلی</Link></li>
+            <li><Link to="/blog">وبلاگ</Link></li>
+            <li><span> {post.title} </span></li>
+          </ul>
+
         </div>
         <div className="col-xs-12 inside-single-post">
-          <h1>{post.title}</h1>
           <div
             className="single-post-content"
             dangerouslySetInnerHTML={{
@@ -71,15 +100,6 @@ export default function SinglePost(props) {
           />
         </div>
       </article>
-      <div className="container">
-        <div className="row">
-          <Disqus
-            identifier={post.id}
-            title={post.title}
-            url={`https://thingers.ir/blog${post.slug}`}
-          />
-        </div>
-      </div>
     </Layout>
   )
 }
