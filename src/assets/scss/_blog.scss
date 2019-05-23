@@ -4,15 +4,9 @@
 
   .cat-tag-section {
     border-bottom: solid 1px gray;
-    a {
-      text-decoration: none;
-    }
     ul {
       list-style: none;
       padding: 0;
-    }
-    a {
-      text-decoration: none;
     }
   }
 
@@ -28,7 +22,6 @@
       font-size: 14px;
 
       a {
-        text-decoration: none;
         color: grey;
         img {
           width: 60px;
@@ -43,11 +36,16 @@
 }
 
 .blog-post-list {
+  .post-block {
+    margin-bottom: 40px;
+  }
   .post-thumbnail {
-    height: 200px;
+    height: 230px;
     display: block;
     background-size: cover;
     background-position: center;
+    border: solid 3px #dedede;
+    border-radius: 5px;
   }
   .post-author-image {
     width: 70px;
@@ -58,7 +56,7 @@
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
-    margin: -30px 20px 0 0;
+    margin: -35px 20px 0 0;
     border: solid 3px #dedede;
     transition: .2s;
     &:hover {
@@ -68,13 +66,12 @@
   .post-author {
     display: inline-block;
     position: relative;
-    top: -22px;
+    top: -17px;
     right: 12px;
     font-size: 11px;
     color: gray;
 
     a {
-      text-decoration: none;
       color: #288fda;
       font-size: 14px;
       transition: .2s;
@@ -82,5 +79,28 @@
         color: #1f6ada;
       }
     }
+  }
+  .post-date {
+    text-align: left;
+    display: block;
+    margin-top: -37px;
+    margin-left: 10px;
+    font-size: 13px;
+    color: #4a4a4a;
+    direction: ltr;
+  }
+  .post-title {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    a {
+      color: #4493bd;
+    }
+  }
+  .post-excerpt {
+    text-align: justify;
+    padding: 0 10px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #464646;
   }
 }

@@ -7,9 +7,13 @@ body {
   direction: rtl;
 }
 
+a {
+  text-decoration: none;
+}
+
 nav {
+  margin: 20px 0 50px;
   a {
-    text-decoration: none;
     padding: 0 10px;
   }
 }

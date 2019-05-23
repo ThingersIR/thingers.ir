@@ -38,6 +38,12 @@ export const query = graphql`
             slug
             name
           }
+          createdAt
+          content {
+            childContentfulRichText {
+              html
+            }
+          }
         }
       }
     }
@@ -55,7 +61,7 @@ export default function Blog({ data }) {
       <div className="container">
         <div className="row blog-post-list">
           {edges.map(post => (
-            <article key={post.node.slug} className="col-xs-6">
+            <article key={post.node.slug} className="col-xs-12 col-md-6 post-block">
               <Link
                 to={`/blog/${post.node.slug}`}
                 className="post-thumbnail"
@@ -68,7 +74,20 @@ export default function Blog({ data }) {
                   backgroundImage: `url(${post.node.author.avatar.file.url})`,
                 }}
               />
-              <div className="post-author">نویسنده: <Link to={`/author/${post.node.author.slug}`}>{post.node.author.name}</Link></div>
+              <div className="post-author">
+                نویسنده:{" "}
+                <Link to={`/author/${post.node.author.slug}`}>
+                  {post.node.author.name}
+                </Link>
+              </div>
+              <time className="post-date">{post.node.createdAt}</time>
+              <h1 className="post-title"><Link to={`/blog/${post.node.slug}`}>{post.node.title}</Link></h1>
+              <div className="post-excerpt">
+                {post.node.content.childContentfulRichText.html.replace(
+                  /<[^>]*>/g,
+                  ""
+                ).slice(0,250)}...
+              </div>
             </article>
           ))}
         </div>
