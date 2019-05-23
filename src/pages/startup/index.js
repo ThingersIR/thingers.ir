@@ -1,10 +1,10 @@
 import React from "react"
-import SEO from "../../components/seo"
+import Seo from "../../components/Seo"
 import Layout from "../../templates/layout"
 
 const StartupPage = () => (
   <Layout>
-    <SEO title="استارتاپ ها" />
+    <Seo title="استارتاپ ها" />
 
     This is startup page page
   </Layout>

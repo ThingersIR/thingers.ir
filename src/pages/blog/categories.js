@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import SEO from "../../components/seo"
+import Seo from "../../components/Seo"
 
 export const query = graphql`
   query {
@@ -18,7 +18,7 @@ export default ({ data }) => {
   const { edges } = data.allContentfulCategory
   return (
     <div>
-      <SEO
+      <Seo
         title="دسته بندی مطالب"
         description="دسته بندی مطالب وبسایت Thingers.ir مقالات در حوزه اینترنت چیزها (اشیاء)"
       />

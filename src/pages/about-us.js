@@ -1,10 +1,10 @@
 import React from "react"
-import SEO from "../components/seo"
+import Seo from "../components/Seo"
 import Layout from "../templates/layout"
 
 const AboutPage = () => (
   <Layout>
-    <SEO title="درباره ما" />
+    <Seo title="درباره ما" />
 
     This is about page
   </Layout>
