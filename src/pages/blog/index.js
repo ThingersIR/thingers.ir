@@ -4,10 +4,11 @@ import Seo from "../../components/Seo"
 import Layout from "../../templates/layout"
 import SearchBox from "../../components/SearchBox"
 import { toJalali } from "../../helpers/date"
+import Img from "gatsby-image"
 
 export const query = graphql`
   query {
-    allContentfulPost(sort: {order: DESC, fields: createdAt}) {
+    allContentfulPost(sort: { order: DESC, fields: createdAt }) {
       edges {
         node {
           title
@@ -15,8 +16,15 @@ export const query = graphql`
           image {
             title
             description
-            file {
-              url
+            fixed(quality: 85) {
+              base64
+              aspectRatio
+              width
+              height
+              src
+              srcSet
+              srcWebp
+              srcSetWebp
             }
           }
           author {
@@ -31,7 +39,6 @@ export const query = graphql`
             }
           }
           category {
-            id
             name
             slug
           }
@@ -68,13 +75,13 @@ export default function Blog({ data }) {
               className="col-xs-12 col-md-6 post-block"
             >
               <div className="inside-post-block">
-                <Link
-                  to={`/blog/${post.node.slug}`}
-                  className="post-thumbnail"
-                  style={{
-                    backgroundImage: `url(${post.node.image.file.url})`,
-                  }}
-                />
+                <Link to={`/blog/${post.node.slug}`} className="post-thumbnail">
+                  <Img
+                    alt={post.node.image.description}
+                    fixed={post.node.image.fixed}
+                    className="post-thumbnail-image"
+                  />
+                </Link>
                 <Link
                   className="post-author-image"
                   to={`/author/${post.node.author.slug}`}

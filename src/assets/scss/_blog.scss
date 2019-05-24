@@ -59,10 +59,11 @@
   }
    }
   .post-thumbnail {
-    height: 230px;
     display: block;
-    background-size: cover;
-    background-position: center;
+    .post-thumbnail-image {
+      width: 100%!important;
+      height: 230px!important;
+    }
   }
   .post-author-image {
     width: 70px;
@@ -76,6 +77,7 @@
     margin: -35px 20px 0 0;
     border: solid 3px #dedede;
     transition: .2s;
+    position: relative;
     &:hover {
       border: solid 3px #6bbdf9;
     }
@@ -137,6 +139,9 @@
       border-left: solid 1px #cccccc;
       padding: 0 10px;
       font-size: 13px;
+      a {
+        color: gray;
+      }
     }
   }
   .post-excerpt {

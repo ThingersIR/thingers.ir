@@ -46,6 +46,13 @@ a {
 nav {
   a {
     padding: 0 10px;
+    color: #676767;
+    font-size: 19px;
+    font-weight: 600;
+    transition: .2s;
+    &:hover {
+      color: #0382de;
+    }
   }
 }
 
