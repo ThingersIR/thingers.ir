@@ -6,7 +6,9 @@ const ContactPage = () => (
   <Layout>
     <Seo title="تماس با ما" />
 
-    This is contacts page
+    <div className="container">
+      This is contacts page
+    </div>
   </Layout>
 )
 

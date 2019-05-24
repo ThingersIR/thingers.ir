@@ -6,7 +6,9 @@ const StartupPage = () => (
   <Layout>
     <Seo title="استارتاپ ها" />
 
-    This is startup page page
+    <div className="container">
+      This is startup page page
+    </div>
   </Layout>
 )
 

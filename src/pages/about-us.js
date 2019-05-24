@@ -6,7 +6,9 @@ const AboutPage = () => (
   <Layout>
     <Seo title="درباره ما" />
 
-    This is about page
+    <div className="container">
+      This is about page
+    </div>
   </Layout>
 )
 

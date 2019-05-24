@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Seo from "../../components/Seo"
 import Layout from "../layout"
+import { IoMdPricetag } from "react-icons/io"
 
 export const query = graphql`
   query($slug: String!) {
@@ -83,11 +84,16 @@ export default function SinglePost(props) {
         </div>
         <div className="single-post-detail">
           <ul>
-            <li><Link to="/">صفحه اصلی</Link></li>
-            <li><Link to="/blog">وبلاگ</Link></li>
-            <li><span> {post.title} </span></li>
+            <li>
+              <Link to="/">صفحه اصلی</Link>
+            </li>
+            <li>
+              <Link to="/blog">وبلاگ</Link>
+            </li>
+            <li>
+              <span> {post.title} </span>
+            </li>
           </ul>
-
         </div>
         <div className="col-xs-12 inside-single-post">
           <div

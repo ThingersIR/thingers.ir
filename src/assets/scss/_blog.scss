@@ -149,9 +149,13 @@
 }
 
 .single-post {
+  box-shadow: 0 4px 10px #cecece;
+  border-radius: 10px;
   .inside-single-post {
     background: white;
-    padding: 0 10px;
+    padding: 15px 20px;
+    border-radius: 0 0 10px 10px;
+    text-align: justify;
   }
   .single-post-top-image {
     background-size: cover;
@@ -202,15 +206,18 @@
     padding: 5px 10px;
     margin-top: -38px;
     line-height: 0;
+    overflow: hidden;
     ul {
       list-style: none;
       padding: 0;
+      text-overflow: ellipsis;
+      white-space: nowrap;
       li {
-        display: inline-block;
+        display: inline;
         padding-left: 10px;
         color: #d4d4d4;
         a {
-          color: #d4d4d4;
+          color: white;
           &:after {
             content: '⇦';
             padding-right: 10px;

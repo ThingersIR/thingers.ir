@@ -6,7 +6,9 @@ const IndexPage = () => (
   <Layout>
     <Seo title="اینترنت چیزها" />
 
-    This is the main page
+    <div className="container">
+      This is the main page
+    </div>
   </Layout>
 )
 
