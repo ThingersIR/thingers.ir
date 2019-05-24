@@ -100,3 +100,25 @@ form.search-box {
     border-right: solid 1px #007de0;
   }
 }
+
+.navigate-button {
+  position: fixed;
+  top: 50%;
+  background: rgba(0, 0, 0, 0.18);
+  line-height: 0;
+  color: white;
+  border-radius: 50%;
+  font-size: 44px;
+  transition: .2s;
+
+  &.next {
+    right: 15px;
+  }
+  &.prev {
+    left: 15px;
+  }
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}

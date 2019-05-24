@@ -2,7 +2,7 @@ import React from "react"
 import { MdSearch } from "react-icons/md"
 export default () => {
   return (
-    <form onSubmit={e => e.preventDefault()} className="search-box">
+    <form onSubmit={e => e.preventDefault()} className="search-box" autoComplete="off">
       <input name="search" type="text" placeholder="جستجو..." />
       <button type="submit">
         <MdSearch />

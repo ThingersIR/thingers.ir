@@ -7,7 +7,7 @@ import { toJalali } from "../../helpers/date"
 
 export const query = graphql`
   query {
-    allContentfulPost {
+    allContentfulPost(sort: {order: DESC, fields: createdAt}) {
       edges {
         node {
           title

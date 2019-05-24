@@ -2,6 +2,9 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Seo from "../../components/Seo"
 import Layout from "../layout"
+import { toJalali } from "../../helpers/date"
+import {MdKeyboardArrowRight} from 'react-icons/md'
+import {MdKeyboardArrowLeft} from 'react-icons/md'
 
 export const query = graphql`
   query($slug: String!) {
@@ -38,21 +41,29 @@ export const query = graphql`
         name
         slug
       }
+      category {
+        name
+        slug
+      }
       childContentfulPostContentRichTextNode {
         childContentfulRichText {
           html
         }
       }
+      createdAt
     }
   }
 `
 
-export default function SinglePost(props) {
-  const { contentfulPost: post } = props.data
+export default function SinglePost({data, pageContext}) {
+  const { contentfulPost: post } = data
+  const {next, prev} = pageContext
 
   return (
     <Layout>
       <Seo title={post.title} description={post.metaDescription} />
+      {next && <Link to={`/blog/${next.slug}`} className="navigate-button next"> <MdKeyboardArrowRight /> </Link>}
+      {prev && <Link to={`/blog/${prev.slug}`} className="navigate-button prev"> <MdKeyboardArrowLeft /> </Link>}
       <div className="container">
         <article className="single-post">
           <div
@@ -104,6 +115,10 @@ export default function SinglePost(props) {
                   .childContentfulRichText.html,
               }}
             />
+            <div className="post-footer-detail">
+              دسته بندی: <Link to={`/blog/categories/${post.category.slug}`}> {post.category.name} </Link>
+              <span>تاریخ انتشار: <time>{toJalali(new Date(post.createdAt))}</time></span>
+            </div>
           </div>
         </article>
       </div>
