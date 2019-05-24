@@ -2,6 +2,8 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Seo from "../../components/Seo"
 import Layout from "../../templates/layout"
+import SearchBox from "../../components/SearchBox"
+import { toJalali } from "../../helpers/date"
 
 export const query = graphql`
   query {
@@ -58,14 +60,20 @@ export default function Blog({ data }) {
         description="مقالات و آموزش‌های مرتبط با اینترنت چیزها (اشیاء) به زبان فارسی | معرفی ابزار و نرم‌افزار"
       />
       <div className="container">
+        <SearchBox />
         <div className="row blog-post-list">
           {edges.map(post => (
-            <article key={post.node.slug} className="col-xs-12 col-md-6 post-block">
+            <article
+              key={post.node.slug}
+              className="col-xs-12 col-md-6 post-block"
+            >
               <div className="inside-post-block">
                 <Link
                   to={`/blog/${post.node.slug}`}
                   className="post-thumbnail"
-                  style={{ backgroundImage: `url(${post.node.image.file.url})` }}
+                  style={{
+                    backgroundImage: `url(${post.node.image.file.url})`,
+                  }}
                 />
                 <Link
                   className="post-author-image"
@@ -81,23 +89,32 @@ export default function Blog({ data }) {
                     {post.node.author.name}
                   </Link>
                 </div>
-                <time className="post-date">{post.node.createdAt}</time>
+                <time className="post-date">
+                  {toJalali(new Date(post.node.createdAt))}
+                </time>
                 <div className="post-content-detail">
-                  <h1 className="post-title"><Link to={`/blog/${post.node.slug}`}>{post.node.title}</Link></h1>
+                  <h1 className="post-title">
+                    <Link to={`/blog/${post.node.slug}`}>
+                      {post.node.title}
+                    </Link>
+                  </h1>
                   <div className="post-tags-list">
                     <ul>
                       {post.node.tags.map(tag => (
                         <li key={tag.slug}>
-                          <Link to={`/blog/tags/${tag.slug}`}> {tag.name} </Link>
+                          <Link to={`/blog/tags/${tag.slug}`}>
+                            {" "}
+                            {tag.name}{" "}
+                          </Link>
                         </li>
                       ))}
                     </ul>
                   </div>
                   <div className="post-excerpt">
-                    {post.node.content.childContentfulRichText.html.replace(
-                      /<[^>]*>/g,
-                      ""
-                    ).slice(0,250)}...
+                    {post.node.content.childContentfulRichText.html
+                      .replace(/<[^>]*>/g, "")
+                      .slice(0, 250)}
+                    ...
                   </div>
                 </div>
               </div>

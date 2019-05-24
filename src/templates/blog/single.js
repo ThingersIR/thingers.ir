@@ -2,7 +2,6 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Seo from "../../components/Seo"
 import Layout from "../layout"
-import { IoMdPricetag } from "react-icons/io"
 
 export const query = graphql`
   query($slug: String!) {
@@ -54,58 +53,60 @@ export default function SinglePost(props) {
   return (
     <Layout>
       <Seo title={post.title} description={post.metaDescription} />
-      <article className="single-post container">
-        <div
-          className="single-post-top-image col-xs-12"
-          style={{
-            backgroundImage: `linear-gradient(to bottom, rgba(36, 59, 85, 0.2), rgba(20, 30, 48, 0.90)), url(${
-              post.image.file.url
-            })`,
-          }}
-        >
-          <Link
-            className="single-post-author-image"
-            to={`/author/${post.author.slug}`}
+      <div className="container">
+        <article className="single-post">
+          <div
+            className="single-post-top-image col-xs-12"
             style={{
-              backgroundImage: `url(${post.author.avatar.file.url})`,
+              backgroundImage: `linear-gradient(to bottom, rgba(36, 59, 85, 0.2), rgba(20, 30, 48, 0.90)), url(${
+                post.image.file.url
+                })`,
             }}
-            title={`نویسنده: ${post.author.name}`}
-          />
-          <h1>{post.title}</h1>
-          <div className="single-post-tags">
+          >
+            <Link
+              className="single-post-author-image"
+              to={`/author/${post.author.slug}`}
+              style={{
+                backgroundImage: `url(${post.author.avatar.file.url})`,
+              }}
+              title={`نویسنده: ${post.author.name}`}
+            />
+            <h1>{post.title}</h1>
+            <div className="single-post-tags">
+              <ul>
+                {post.tags.map(tag => (
+                  <li key={tag.slug}>
+                    <Link to={`/blog/tags/${tag.slug}`}> {tag.name} </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className="single-post-detail">
             <ul>
-              {post.tags.map(tag => (
-                <li key={tag.slug}>
-                  <Link to={`/blog/tags/${tag.slug}`}> {tag.name} </Link>
-                </li>
-              ))}
+              <li>
+                <Link to="/">صفحه اصلی</Link>
+              </li>
+              <li>
+                <Link to="/blog">وبلاگ</Link>
+              </li>
+              <li>
+                <span> {post.title} </span>
+              </li>
             </ul>
           </div>
-        </div>
-        <div className="single-post-detail">
-          <ul>
-            <li>
-              <Link to="/">صفحه اصلی</Link>
-            </li>
-            <li>
-              <Link to="/blog">وبلاگ</Link>
-            </li>
-            <li>
-              <span> {post.title} </span>
-            </li>
-          </ul>
-        </div>
-        <div className="col-xs-12 inside-single-post">
-          <div
-            className="single-post-content"
-            dangerouslySetInnerHTML={{
-              __html:
+          <div className="col-xs-12 inside-single-post">
+            <div
+              className="single-post-content"
+              dangerouslySetInnerHTML={{
+                __html:
                 post.childContentfulPostContentRichTextNode
                   .childContentfulRichText.html,
-            }}
-          />
-        </div>
-      </article>
+              }}
+            />
+          </div>
+        </article>
+      </div>
     </Layout>
   )
 }

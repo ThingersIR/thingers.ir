@@ -13,6 +13,19 @@ body {
   margin: 0 auto;
   height: 100%;
 }
+.container {
+  padding: 0 1rem;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+input {
+  box-sizing: border-box;
+  font-family: Sahel, sans-serif;
+}
 #___gatsby {
   height: 100%;
 }
@@ -53,5 +66,37 @@ footer {
   }
   a {
     color: #0069bd;
+  }
+}
+
+form.search-box {
+  padding-bottom: 20px;
+  position: relative;
+  input {
+    width: 100%;
+    border-radius: 30px;
+    border: none;
+    padding: 12px 20px;
+    font-size: 20px;
+    color: #464646;
+    box-sizing: border-box;
+    background: #ffffff;
+    box-shadow: 0 0 4px #9c9c9c;
+    transition: .2s;
+    &:hover, &:focus {
+      box-shadow: 0 0 8px #898989;
+    }
+  }
+  button {
+    position: absolute;
+    border: none;
+    box-shadow: none;
+    left: 0;
+    background: rgba(33, 150, 243, 0.71);
+    font-size: 30px;
+    border-radius: 50% 0 0 50%;
+    color: white;
+    padding: 13px 13px 5px;
+    border-right: solid 1px #007de0;
   }
 }
