@@ -1,6 +1,7 @@
 @import "font";
 @import "rules";
 @import "blog";
+@import "startup";
 
 html {
   height: 100%;
@@ -119,10 +120,10 @@ form.search-box {
   transition: .2s;
 
   &.next {
-    right: 15px;
+    right: 10px;
   }
   &.prev {
-    left: 15px;
+    left: 10px;
   }
 
   &:hover {

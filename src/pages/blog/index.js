@@ -16,7 +16,7 @@ export const query = graphql`
           image {
             title
             description
-            fixed(quality: 85) {
+            fixed(quality: 80, width: 600) {
               base64
               aspectRatio
               width

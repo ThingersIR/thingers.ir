@@ -9,7 +9,7 @@ export default () => (
     <nav className="row center-lg center-md center-sm center-xs">
       <Link to="/">صفحه اصلی</Link>
       <Link to="/blog">وبلاگ</Link>
-      <Link to="/startup">معرفی استارتاپ ها</Link>
+      <Link to="/startup">استارتاپ ها</Link>
       <Link to="/about-us">درباره ما</Link>
     </nav>
   </header>

@@ -29,7 +29,7 @@ export const query = graphql`
 `
 
 const IndexPage = ({ data }) => {
-  const imageObject = data.allImageSharp.edges[0].node.fixed
+  // const imageObject = data.allImageSharp.edges[0].node.fixed
   return (
     <Layout>
       <Seo title="اینترنت چیزها" />
