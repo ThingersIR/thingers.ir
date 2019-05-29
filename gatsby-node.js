@@ -32,16 +32,16 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
       },
     })
   })
-  startups.forEach(({ node }, index) => {
-    const { slug } = node
-    createPage({
-      path: `/startup/${slug}`,
-      component: require.resolve("./src/templates/startup/single.js"),
-      context: {
-        slug,
-        prev: index === 0 ? null : startups[index - 1].node,
-        next: index === (startups.length - 1) ? null : startups[index + 1].node
-      },
-    })
-  })
+  // startups.forEach(({ node }, index) => {
+  //   const { slug } = node
+  //   createPage({
+  //     path: `/startup/${slug}`,
+  //     component: require.resolve("./src/templates/startup/single.js"),
+  //     context: {
+  //       slug,
+  //       prev: index === 0 ? null : startups[index - 1].node,
+  //       next: index === (startups.length - 1) ? null : startups[index + 1].node
+  //     },
+  //   })
+  // })
 }
