@@ -13,6 +13,13 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `#4DD0E2`,
+        showSpinner: true,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -38,15 +45,6 @@ module.exports = {
       options: {
         spaceId: `55xbco9h9xme`,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-nprogress`,
-      options: {
-        // Setting a color is optional.
-        color: `#4DD0E2`,
-        // Disable the loading spinner.
-        showSpinner: false,
       },
     },
   ],

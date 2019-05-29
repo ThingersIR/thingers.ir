@@ -1,0 +1,77 @@
+.page-super-header {
+  height: 300px;
+  margin-bottom: 40px;
+  overflow: hidden;
+  position: relative;
+  .gradient-layer {
+    background: linear-gradient(to bottom, rgba(36, 59, 85, 0.5), rgba(20, 30, 48, 0.9));
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    transition: .3s;
+  }
+  .gatsby-image-wrapper {
+    width: 100%!important;
+    height: auto!important;
+    align-self: normal;
+  }
+  .search-in-header-container {
+    position: absolute;
+  }
+}
+
+form.search-box {
+  padding-bottom: 20px;
+  position: relative;
+  z-index: 2;
+  input {
+    width: 100%;
+    border-radius: 30px;
+    border: none;
+    padding: 12px 20px;
+    font-size: 20px;
+    color: #464646;
+    box-sizing: border-box;
+    background: #ffffff;
+    box-shadow: 0 0 4px #9c9c9c;
+    transition: .2s;
+    &:hover, &:focus {
+      box-shadow: 0 0 8px #898989;
+    }
+  }
+  button {
+    position: absolute;
+    border: none;
+    box-shadow: none;
+    left: 0;
+    background: rgba(33, 150, 243, 0.71);
+    font-size: 30px;
+    border-radius: 50% 0 0 50%;
+    color: white;
+    padding: 13px 13px 5px;
+    border-right: solid 1px #007de0;
+  }
+}
+
+.navigate-button {
+  position: fixed;
+  top: 50%;
+  background: rgba(0, 0, 0, 0.18);
+  line-height: 0;
+  color: white;
+  border-radius: 50%;
+  font-size: 44px;
+  transition: .2s;
+
+  &.next {
+    right: 10px;
+  }
+  &.prev {
+    left: 10px;
+  }
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}

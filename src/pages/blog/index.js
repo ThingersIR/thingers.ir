@@ -54,6 +54,22 @@ export const query = graphql`
           }
         }
       }
+    },
+    contentfulSiteMedia {
+      blogHeaderImage {
+        title
+        description
+        fixed(quality: 100, width: 1300) {
+          base64
+          aspectRatio
+          width
+          height
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+        }
+      }
     }
   }
 `
@@ -66,13 +82,21 @@ export default function Blog({ data }) {
         title="وبلاگ"
         description="مقالات و آموزش‌های مرتبط با اینترنت چیزها (اشیاء) به زبان فارسی | معرفی ابزار و نرم‌افزار"
       />
+      <div className="container-fluid">
+        <div className="row page-super-header justify-content-center align-items-center">
+          <Img fixed={data.contentfulSiteMedia.blogHeaderImage.fixed} alt={data.contentfulSiteMedia.blogHeaderImage.description}/>
+          <div className="gradient-layer" />
+          <div className="search-in-header-container col-md-4 col-xs-12">
+            <SearchBox />
+          </div>
+        </div>
+      </div>
       <div className="container">
-        <SearchBox />
         <div className="row blog-post-list">
           {edges.map(post => (
             <article
               key={post.node.slug}
-              className="col-xs-12 col-md-6 post-block"
+              className="col-md-12 col-lg-6 post-block"
             >
               <div className="inside-post-block">
                 <Link to={`/blog/${post.node.slug}`} className="post-thumbnail">

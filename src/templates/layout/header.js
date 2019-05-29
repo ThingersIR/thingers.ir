@@ -1,12 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
-import "flexboxgrid"
 import "../../assets/scss/main.scss"
 
 
 export default () => (
   <header className="container-fluid">
-    <nav className="row center-lg center-md center-sm center-xs">
+    <nav>
       <Link to="/">صفحه اصلی</Link>
       <Link to="/blog">وبلاگ</Link>
       <Link to="/startup">استارتاپ ها</Link>

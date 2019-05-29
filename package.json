@@ -6,6 +6,7 @@
   "author": "Moein Alizadeh <truemoein@gmail.com>",
   "dependencies": {
     "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",
+    "bootstrap": "^4.3.1",
     "flexboxgrid": "^6.3.1",
     "gatsby": "^2.4.3",
     "gatsby-image": "^2.0.41",
