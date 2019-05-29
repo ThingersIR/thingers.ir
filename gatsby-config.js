@@ -39,6 +39,15 @@ module.exports = {
         spaceId: `55xbco9h9xme`,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
-    }
+    },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: `#4DD0E2`,
+        // Disable the loading spinner.
+        showSpinner: false,
+      },
+    },
   ],
 }
