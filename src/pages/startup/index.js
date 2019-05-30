@@ -3,7 +3,7 @@ import Img from "gatsby-image"
 import Seo from "../../components/Seo"
 import Layout from "../../templates/layout"
 import { graphql, Link } from "gatsby"
-import SearchBox from "../../components/SearchBox"
+import PageSuperHeaderWithSearchBox from "../../components/PageSuperHeaderWithSearchBox"
 
 export const query = graphql`
   query {
@@ -75,17 +75,12 @@ const StartupPage = props => {
   } = props
   return (
     <Layout>
-      <Seo title="استارتاپ ها" />
+      <Seo title="استارتاپ ها" description="معرفی استارتاپ های فعال در حوزه اینترنت اشیا اینترنت چیزها IOT Internet of things" />
 
-      <div className="container-fluid">
-        <div className="row page-super-header justify-content-center align-items-center">
-          <Img fixed={startupsHeaderImage.fixed} alt={startupsHeaderImage.description}/>
-          <div className="gradient-layer" />
-          <div className="search-in-header-container col-md-4 col-xs-12">
-            <SearchBox />
-          </div>
-        </div>
-      </div>
+      <PageSuperHeaderWithSearchBox
+        image={startupsHeaderImage.fixed}
+        imageAlt={startupsHeaderImage.description}
+      />
 
       <div className="container">
         <div className="row">

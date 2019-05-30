@@ -34,7 +34,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <Seo title="اینترنت چیزها" />
       <div className="container">
-        <div className="row center-lg center-md center-sm center-xs">
+        <div className="row justify-content-center align-items-center">
           <img
             src={thingers}
             alt="Thingers.ir"

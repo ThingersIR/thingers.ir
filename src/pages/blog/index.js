@@ -2,9 +2,9 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Seo from "../../components/Seo"
 import Layout from "../../templates/layout"
-import SearchBox from "../../components/SearchBox"
 import { toJalali } from "../../helpers/date"
 import Img from "gatsby-image"
+import PageSuperHeaderWithSearchBox from "../../components/PageSuperHeaderWithSearchBox"
 
 export const query = graphql`
   query {
@@ -82,15 +82,12 @@ export default function Blog({ data }) {
         title="وبلاگ"
         description="مقالات و آموزش‌های مرتبط با اینترنت چیزها (اشیاء) به زبان فارسی | معرفی ابزار و نرم‌افزار"
       />
-      <div className="container-fluid">
-        <div className="row page-super-header justify-content-center align-items-center">
-          <Img fixed={data.contentfulSiteMedia.blogHeaderImage.fixed} alt={data.contentfulSiteMedia.blogHeaderImage.description}/>
-          <div className="gradient-layer" />
-          <div className="search-in-header-container col-md-4 col-xs-12">
-            <SearchBox />
-          </div>
-        </div>
-      </div>
+
+      <PageSuperHeaderWithSearchBox
+        image={data.contentfulSiteMedia.blogHeaderImage.fixed}
+        imageAlt={data.contentfulSiteMedia.blogHeaderImage.description}
+      />
+
       <div className="container">
         <div className="row blog-post-list">
           {edges.map(post => (

@@ -1,4 +1,5 @@
 @import "~bootstrap/scss/bootstrap-grid";
+@import "~bootstrap/scss/bootstrap-reboot";
 @import "font";
 @import "rules";
 @import "blog";
@@ -11,6 +12,7 @@ html {
 body {
   font-family: Sahel, sans-serif;
   direction: rtl;
+  text-align: right;
   background: whitesmoke;
   padding: 0;
   margin: 0 auto;
@@ -43,6 +45,9 @@ main {
 
 a {
   text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
 }
 nav {
   text-align: center;
@@ -54,6 +59,10 @@ nav {
     transition: .2s;
     &:hover {
       color: #0382de;
+    }
+    &.active {
+      color: #3e3e3e;
+      font-weight: 900;
     }
   }
 }
