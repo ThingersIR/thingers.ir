@@ -23,7 +23,7 @@ export const query = graphql`
           telegram
           instagram
           linkedin
-          media {
+          mediaFiles {
             title
             description
             fixed(quality: 80, width: 600) {
@@ -90,7 +90,7 @@ const StartupPage = props => {
                 <div className="gradient-layer" />
                 <h1>{startup.name}</h1>
                 <h4>{startup.category.name}</h4>
-                <Img fixed={startup.media.fixed} alt={startup.media.description} title={startup.media.title} />
+                <Img fixed={startup.mediaFiles[0].fixed} alt={startup.mediaFiles[0].description} title={startup.mediaFiles[0].title} />
               </article>
             </Link>
           ))}

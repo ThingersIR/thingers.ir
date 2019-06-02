@@ -10,7 +10,7 @@ export default function PageSuperHeaderWithSearchBox(props) {
       <div className="row page-super-header justify-content-center align-items-center">
         <Img fixed={image} alt={imageAlt}/>
         <div className="gradient-layer" />
-        <div className="search-in-header-container col-md-4 col-xs-12">
+        <div className="search-in-header-container col-lg-4 col-md-6 col-sm-8 col-xs-12">
           <SearchBox />
         </div>
       </div>
