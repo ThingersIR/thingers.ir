@@ -1,11 +1,24 @@
+require('dotenv').config()
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Thingers.ir`,
+    description: `معرفی استارتاپ‌های فعال ایران در حوزه اینترنت اشیا(چیزها)`,
+    siteUrl: 'https://thingers.ir',
+    author: `@truemoein`,
   },
   plugins: [
+    `@contentful/gatsby-transformer-contentful-richtext`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `#4DD0E2`,
+        showSpinner: true,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -18,17 +31,21 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Thingers.ir`,
+        short_name: `Thingers`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        background_color: `#EFAB48`,
+        theme_color: `#4DD0E2`,
+        display: `standalone`,
+        icon: `src/images/ThingersLogo.png`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `55xbco9h9xme`,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
   ],
 }

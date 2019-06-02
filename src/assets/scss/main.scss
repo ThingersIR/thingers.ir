@@ -1,0 +1,88 @@
+@import "~bootstrap/scss/bootstrap-grid";
+@import "~bootstrap/scss/bootstrap-reboot";
+@import "font";
+@import "rules";
+@import "blog";
+@import "startup";
+@import "general";
+
+html {
+  height: 100%;
+}
+body {
+  font-family: Sahel, sans-serif;
+  direction: rtl;
+  text-align: right;
+  background: whitesmoke;
+  padding: 0;
+  margin: 0 auto;
+  height: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+input {
+  box-sizing: border-box;
+  font-family: Sahel, sans-serif;
+}
+#___gatsby {
+  height: 100%;
+}
+div[role="group"] {
+  height: 100%;
+}
+header {
+  margin-top: 20px;
+}
+main {
+  margin-top: 30px;
+  min-height: 100%;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+nav {
+  text-align: center;
+  a {
+    padding: 0 10px;
+    color: #676767;
+    font-size: 19px;
+    font-weight: 600;
+    transition: .2s;
+    &:hover {
+      color: #0382de;
+    }
+    &.active {
+      color: #3e3e3e;
+      font-weight: 900;
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  width: 100%;
+  direction: ltr;
+  display: flex;
+  justify-content: flex-end;
+  flex-flow: column;
+  span {
+    font-size: 14px;
+    color: #505050;
+  }
+  i {
+    font-style: normal;
+    color: red;
+  }
+  a {
+    color: #0069bd;
+  }
+}

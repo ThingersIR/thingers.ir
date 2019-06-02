@@ -1,0 +1,74 @@
+.startup-thumbnail {
+  margin-bottom: 20px;
+  transition: .3s;
+  .startup-thumbnail-image {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 13px #a8a8a8;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .3s;
+    .gatsby-image-wrapper {
+      width: 100%!important;
+      height: 250px!important;
+    }
+    &:hover {
+      box-shadow: 0 5px 13px #575757;
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 900;
+        letter-spacing: 12px;
+        top: 75px;
+      }
+      h4 {
+        top: 135px;
+        font-size: 1rem;
+        background: rgba(40, 143, 218, 0.8);
+        opacity: 1;
+        padding: 5px;
+        border-radius: 10px;
+      }
+      .gradient-layer {
+        background: linear-gradient(to bottom, rgba(36, 59, 85, 0.6), rgba(20, 30, 48, 0.9));
+      }
+    }
+    h1 {
+      position: absolute;
+      width: 100%;
+      color: white;
+      text-align: center;
+      z-index: 2;
+      margin: 0;
+      font-family: sans-serif;
+      font-weight: 700;
+      letter-spacing: 3px;
+      font-size: 2rem;
+      transition: .3s;
+      top: 100px;
+    }
+    h4 {
+      position: absolute;
+      top: 100px;
+      color: white;
+      text-align: center;
+      z-index: 2;
+      margin: 0;
+      font-size: 0;
+      opacity: 0;
+      transition: .3s;
+    }
+    .gradient-layer {
+      background: linear-gradient(to bottom, rgba(36, 59, 85, 0.3), rgba(20, 30, 48, 0.6));
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+      transition: .3s;
+    }
+  }
+}
